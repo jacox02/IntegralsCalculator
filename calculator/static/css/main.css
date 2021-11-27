@@ -81,19 +81,42 @@ main > .main-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(230, 230, 230, 0.5);
+  border: 1.5px solid rgb(195, 195, 195);
 }
 
 .main-container .app .modes a {
   text-decoration: none;
-  color: #fff;
+  color: #808080;
   text-align: center;
   font-family: "Ubuntu", sans-serif;
   font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+
 .main-container .app .modes .basic {
+  background-color: rgb(255, 255, 255);
+  color: #808080;
+}
+
+
+.main-container .app .modes .basic:hover {
   background-color: #e02342;
+}
+
+.main-container .app .modes .basic:hover >a {
+  color: #fff;
+}
+
+.main-container .app .modes .active {
+  background-color: #e02342;
+}
+.main-container .app .modes .active a {
+  color: #fff;
 }
 
 /* keyboard */
@@ -111,6 +134,7 @@ main > .main-container {
   background-color: #fff;
   box-sizing: border-box;
   padding: 8px;
+  border: 2px solid rgb(195, 195, 195);
 }
 
 .main-container .app .keyboard li {
@@ -127,6 +151,7 @@ main > .main-container {
 }
 
 .main-container .app .keyboard li > a {
+  
   height: 100%;
   width: 100%;
   display: flex;
@@ -136,7 +161,7 @@ main > .main-container {
   text-decoration: none;
   color: #808080;
   font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .main-container .app .keyboard li:hover {
