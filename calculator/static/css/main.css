@@ -1,0 +1,232 @@
+/* general styles */
+/* styles by @LNagad in github */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f6f4f4;
+}
+
+main {
+  width: 100%;
+}
+
+/* ------------- top container ------------ */
+
+main > .top-container {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(195, 195, 195, 0.3);
+  margin-bottom: 150px;
+}
+
+.top-container > header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.top-container > header > .logo {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.top-container > header > .login {
+  width: 35%;
+  display: flex;
+  align-items: center;
+}
+
+/* ------------- mid container ------------ */
+
+main > .main-container {
+  width: 100%;
+  height: 450px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+
+.main-container .app {
+  width: 50%;
+  height: 200px;
+  margin-top: 40px;
+}
+
+/* ------------- selection mode (basic, integrals, logaritm, ...) ------------ */
+
+.main-container .app .modes {
+  width: 52%;
+  height: 55px;
+  position: absolute;
+  margin-top: -50px;
+  margin-left: -20px;
+  display: flex;
+}
+
+.main-container .app .modes li {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid rgb(195, 195, 195);
+}
+
+.main-container .app .modes a {
+  text-decoration: none;
+  color: #808080;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main-container .app .modes .basic {
+  background-color: rgb(255, 255, 255);
+  color: #808080;
+}
+
+
+.main-container .app .modes .basic:hover {
+  background-color: #e02342;
+}
+
+.main-container .app .modes .basic:hover >a {
+  color: #fff;
+}
+
+.main-container .app .modes .active {
+  background-color: #e02342;
+}
+.main-container .app .modes .active a {
+  color: #fff;
+}
+
+/* ------------- keyboard ------------ */
+
+.main-container .app .keyboard {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  flex-wrap: wrap;
+
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 2px solid rgb(195, 195, 195);
+}
+
+.main-container .app .keyboard li {
+  background-color: #f6f4f4;
+
+  border: #8080802a 1px solid;
+  height: 50px;
+  width: 9.1%;
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main-container .app .keyboard li > a {
+  
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: #808080;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+}
+
+.main-container .app .keyboard li:hover {
+  background-color: #ffff;
+}
+
+/* ------------- input ------------ */
+
+.main-container .app .input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.main-container .app .input .components {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.main-container .app .input .components input {
+  width: 85%;
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  padding: 10px 0 5px 10px;
+  font-style: italic;
+  font-size: 24px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  border: #8080808f 1px solid;
+}
+
+.main-container .app .input .components input:focus {
+  border: #8080808f 3px solid;
+  /* shadow */
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.main-container .app .input .components button {
+  width: 11%;
+  height: 100%;
+  background-color: #e02342;
+  /* Green */
+  border: none;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.main-container .app .input .components button:hover {
+  background-color: #ff2246;
+  cursor: pointer;
+}
