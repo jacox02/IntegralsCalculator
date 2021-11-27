@@ -1,3 +1,6 @@
+/* general styles */
+/* styles by @LNagad in github */
+
 * {
   padding: 0;
   margin: 0;
@@ -21,7 +24,7 @@ main {
   width: 100%;
 }
 
-/* contenedor de arriba */
+/* ------------- top container ------------ */
 
 main > .top-container {
   width: 100%;
@@ -49,7 +52,7 @@ main > .top-container {
   align-items: center;
 }
 
-/* contenedor de medio */
+/* ------------- mid container ------------ */
 
 main > .main-container {
   width: 100%;
@@ -65,7 +68,8 @@ main > .main-container {
   margin-top: 40px;
 }
 
-/* modos de seleccion - top */
+/* ------------- selection mode (basic, integrals, logaritm, ...) ------------ */
+
 .main-container .app .modes {
   width: 52%;
   height: 55px;
@@ -119,7 +123,7 @@ main > .main-container {
   color: #fff;
 }
 
-/* keyboard */
+/* ------------- keyboard ------------ */
 
 .main-container .app .keyboard {
   width: 100%;
@@ -168,7 +172,7 @@ main > .main-container {
   background-color: #ffff;
 }
 
-/* input */
+/* ------------- input ------------ */
 
 .main-container .app .input {
   width: 100%;
