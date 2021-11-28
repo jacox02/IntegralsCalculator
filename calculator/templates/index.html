@@ -1,100 +1,114 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href={% static 'css/main.css' %} />
-    <title>Calculadora Itla</title>
-    <script
-      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
-      type="text/javascript"
-    ></script>
-    <script src="{% static 'js/app.js' %}"></script>
-  </head>
 
-  <body>
-    <main>
-      <section class="top-container">
-        <header>
-          <div class="logo">
-            <h2>mi logo</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href={% static 'css/main.css' %} />
+  <title>Calculadora Itla</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+
+</head>
+
+<body>
+  <main>
+    <section class="top-container">
+      <header>
+        <div class="logo">
+          <h2>mi logo</h2>
+        </div>
+        <div class="login">
+          <h2>login</h2>
+        </div>
+      </header>
+    </section>
+
+    <section class="main-container">
+      <section class="app">
+        <div class="modes">
+          <li class="basic active"><a href="#">Basic</a></li>
+          <li class="basic"><a href="#">...</a></li>
+          <li class="basic"><a href="#">...</a></li>
+          <li class="basic"><a href="#">...</a></li>
+          <li class="basic"><a href="#">...</a></li>
+          <li class="basic"><a href="#">...</a></li>
+          <li class="basic"><a href="#">...</a></li>
+          <li class="basic"><a href="#">...</a></li>
+          <li class="basic"><a href="#">...</a></li>
+          <li class="basic"><a href="#">...</a></li>
+        </div>
+        <div class="keyboard" id="keyboard">
+          <li><a class="button" onclick="prueba()" href="#">1</a></li>
+          <li><a class="button" href="#">2</a></li>
+          <li><a class="button" href="#">3</a></li>
+          <li><a class="button" href="#">4</a></li>
+          <li><a class="button" href="#">5</a></li>
+          <li><a class="button" href="#">6</a></li>
+          <li><a class="button" href="#">7</a></li>
+          <li><a class="button" href="#">8</a></li>
+          <li><a class="button" href="#">9</a></li>
+          <li><a class="button" href="#">10</a></li>
+          <li><a class="button" href="#">+</a></li>
+          <li><a class="button" href="#">-</a></li>
+          <li><a class="button" href="#">/</a></li>
+          <li><a class="button" href="#">-</a></li>
+          <li><a class="button" href="#">x</a></li>
+          <li><a class="button" href="#">y</a></li>
+          <li><a class="button" href="#">ln</a></li>
+          <li><a class="button" href="#">√☐</a></li>
+          <li><a class="button" href="#">x<span class="" style="margin-top: -10px;">☐</span></a></li>
+          <li><a class="button" href="#">e</a></li>
+          <li><a class="button" href="#"></a></li>
+          <li><a class="button" href="#"></a></li>
+          <li><a class="button" href="#"></a></li>
+          <li><a class="button" href="#"></a></li>
+          <li><a class="button" href="#"></a></li>
+          <li><a class="button" href="#"></a></li>
+          <li><a class="button" href="#"></a></li>
+          <li><a class="button" href="#"></a></li>
+          <li><a class="button" href="#"></a></li>
+          <li><a class="button" href="#"></a></li>
+        </div>
+        <div class="input">
+          <div class="components">
+            <!-- function that make the calculus -->
+            <input type="text" placeholder="Ingresa un problema" id="FunctionForm" disabled />
+            <button onclick="calculateIntegral(document.getElementById('FunctionForm').value)">
+              Ir
+            </button>
+            <div id="display"></div>
           </div>
-          <div class="login">
-            <h2>login</h2>
-          </div>
-        </header>
+        </div>
       </section>
+    </section>
+  </main>
+  <!----------------- front end scripts -->
+  <script type="text/javascript">
 
-      <section class="main-container">
-        <section class="app">
-          <div class="modes">
-            <li class="basic active"><a href="#">Basic</a></li>
-            <li class="basic"><a href="#">...</a></li>
-            <li class="basic"><a href="#">...</a></li>
-            <li class="basic"><a href="#">...</a></li>
-            <li class="basic"><a href="#">...</a></li>
-            <li class="basic"><a href="#">...</a></li>
-            <li class="basic"><a href="#">...</a></li>
-            <li class="basic"><a href="#">...</a></li>
-            <li class="basic"><a href="#">...</a></li>
-            <li class="basic"><a href="#">...</a></li>
-          </div>
-          <div class="keyboard">
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">6</a></li>
-            <li><a href="#">7</a></li>
-            <li><a href="#">8</a></li>
-            <li><a href="#">9</a></li>
-            <li><a href="#">10</a></li>
+    let inputDisplay = document.getElementById('FunctionForm');
+    
+    let buttons = Array.from(document.getElementsByClassName('button'));
 
-            <li><a href="#">+</a></li>
-            <li><a href="#">-</a></li>
-            <li><a href="#">/</a></li>
-            <li><a href="#">-</a></li>
-            <li><a href="#">x</a></li>
-            <li><a href="#">y</a></li>
-            <li><a href="#">ln</a></li>
-            <li><a href="#">√☐</a></li>
-            <li><a href="#">x<span class="" style="margin-top: -10px;">☐</span></a></li>
-            <li><a href="#">e</a></li>
+    buttons.map(button => {
 
+      button.addEventListener('click', e => {
+        switch (e.target.innerText) {
+          default:
+
+            // document.getElementById("FunctionForm").value += e.target.innerText;
             
-              
-            
+            inputDisplay.value += e.target.innerText;
+        }
+      })
 
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-          </div>
-          <div class="input">
-            <div class="components">
-              <input
-                type="text"
-                placeholder="Ingresa un problema"
-                id="FunctionForm"
-              />
-              <button
-                onclick="calculateIntegral(document.getElementById('FunctionForm').value)"
-              >
-                Ir
-              </button>
-            </div>
-          </div>
-        </section>
-      </section>
-    </main>
-  </body>
+    });
+
+  </script>
+
+  <!-- <script src="index.js"></script> -->
+</body>
+
 </html>
